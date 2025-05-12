@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=810">
+  <title>Mix & Match</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="match-container">
+    <h1 id="title-text">MIX & MATCH</h1>
+    <p class="subtitle">Match hjertesygdommen med en behandlingsform</p>
+
+    <!-- Draggable items -->
+    <div class="draggables">
+        <div class="item circle" id="drag-hjertestop" draggable="true" data-id="hjertestop">Hjertestop</div>
+        <div class="item circle" id="drag-hjerteklapsygdom" draggable="true" data-id="hjerteklapsygdom">Hjerte-klapsygdom</div>
+        <div class="item circle" id="drag-hjertearytmier" draggable="true" data-id="hjertearytmier">Hjerte-arytmier</div>
+        <div class="item circle" id="drag-aareforsnaevring" draggable="true" data-id="aareforsnaevring">Åreforsnævring</div>        
+    </div>
+
+    <!-- Drop zones -->
+    <div class="droppables">
+        <div class="item square" id="drop-aareforsnaevring" data-match="aareforsnaevring">PCI ballonudvidelse</div>
+        <div class="item square" id="drop-hjerteklapsygdom" data-match="hjerteklapsygdom">Transkateter aortaklap-implantation</div>
+        <div class="item square" id="drop-hjertestop" data-match="hjertestop">Hjertestarter</div>
+        <div class="item square" id="drop-hjertearytmier" data-match="hjertearytmier">Ablation</div>        
+    </div>
+  </div>
+
+ <!-- Overlay background -->
+<div id="modal-overlay" class="modal-overlay hidden"></div>
+
+<!-- Match modal -->
+<div id="match-modal" class="modal hidden">
+  <h2 id="modal-title">MATCH!</h2>
+  <p id="modal-description"></p>
+  <img id="modal-graphic" class="infografik" src="" alt="Infografik">
+</div>
+
+<!-- Completion Modal -->
+<div id="completed-modal" class="modal hidden">
+    <h2>DU HAR MATCHET DEM ALLE!</h2>
+    <p>Du bliver nu sendt tilbage til startsiden...</p>
+  </div>  
+
+  <script src="Javascript/sygdommeoghelbredelse.js"></script>
+</body>
+</html>
