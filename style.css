@@ -1,0 +1,373 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 1440px;
+    height: 810px;
+    overflow: hidden;
+    font-family: Inter;
+  }
+  
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 810px;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  #title-text {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; /* Inter Black */
+    color: white;
+    z-index: 4;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }  
+  
+  #title-text.hidden {
+    opacity: 0;
+  }  
+  
+  #heart-hotspot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width:400px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+    background-color: transparent;
+  }
+
+  #circles-container {
+    z-index: 2;
+  }
+  
+  .floating-circle {
+    position: absolute;
+    width: 183px;
+    height: 183px;
+    border-radius: 50%;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 1.5s ease-out;
+    animation: none;
+    border: 5px #164B9C solid;
+  }
+  
+  /* Target state: when 'active' class is applied */
+  #circles-container.active .floating-circle {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Final target positions + animation (based on nth-child) */
+  #circles-container.active .floating-circle:nth-child(1) {
+    left: 10%;
+    top: 15%;
+    animation: floatAround 8s infinite ease-in-out;
+  }
+  
+  #circles-container.active .floating-circle:nth-child(2) {
+    left: 12%;
+    top: 65%;
+    animation: floatAround 8s infinite ease-in-out 1s;
+  }
+  
+  #circles-container.active .floating-circle:nth-child(3) {
+    left: 72%;
+    top: 10%;
+    animation: floatAround 8s infinite ease-in-out 2s;
+  }
+  
+  #circles-container.active .floating-circle:nth-child(4) {
+    left: 75%;
+    top: 65%;
+    animation: floatAround 8s infinite ease-in-out 3s;
+  }
+  
+  @keyframes floatAround {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(10px, -15px); }
+    50% { transform: translate(-10px, 10px); }
+    75% { transform: translate(15px, -10px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  
+  #heart-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 810px;
+    opacity: 0;
+    z-index: 3; /* Above circles */
+    pointer-events: none; /* So it doesn't block the hotspot click */
+    transition: opacity 0.2s ease;
+  }
+  
+  #heart-image.visible {
+    opacity: 1;
+  }  
+  
+
+  
+  .match-container {
+    width: 100%;
+    height: 100%;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background-image: url('../images/hjertebaggrund.png');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }  
+  
+  .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 50px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    color: white;
+  }  
+  
+  .draggables, .droppables {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    background-color: white;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; /* Inter Black */
+    font-size: 20px;
+    text-align: center;
+    cursor: grab;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    border: 5px solid #164B9C;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .item.dragging {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }  
+  
+  .circle {
+    border-radius: 50%;
+    width: 183px;
+    height: 183px;
+  }
+  
+  .square {
+    border-radius: 20px;
+    width: 180px;
+    height: 183px;
+  }  
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .modal-overlay.show {
+    display: block;
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: translate(-50%, -50%) scale(0.6);
+      opacity: 0;
+    }
+    60% {
+      transform: translate(-50%, -50%) scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 723px;
+    height: 683px;
+    background: white;
+    color: black;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    padding: 0px 40px;
+    z-index: 999;
+    display: none;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    transform: translate(-50%, -50%) scale(0.6);
+    transition: none;
+  }
+  
+  .modal.show {
+    animation: popIn 0.5s ease forwards;
+  }
+  
+  .modal h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; /* Inter Black */
+    font-size: 70px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  
+  .modal p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 25px;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  .infografik {
+    display: block;
+    width: 100%;
+    max-width: 626px;
+    height: 321px;
+    margin: 40px auto 0 auto;
+    border-radius: 20px;
+    object-fit: contain;
+  }   
+  
+  .modal.show {
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #completed-modal h2 {
+    font-size: 50px;
+    font-weight: 900;
+  }
+  
+  #completed-modal p {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  @keyframes popOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+  
+  .pop-out {
+    animation: popOut 0.4s forwards;
+    pointer-events: none;
+  }
+  
+  @keyframes wiggle {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(-5deg); }
+    30%  { transform: rotate(5deg); }
+    45%  { transform: rotate(-4deg); }
+    60%  { transform: rotate(4deg); }
+    75%  { transform: rotate(-2deg); }
+    90%  { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .wiggle {
+    animation: wiggle 0.4s ease;
+  }
+  
+
+  /* Hjertespillet */
+  #game-screen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .left, .right {
+    width: 45%;
+  }
+  
+  button {
+    background-color: #db1010;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  #hjertespillet-title {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; /* Inter Black */
+    color: white;
+    z-index: 4;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  } 
+
+  #hjertespillet-title.hidden {
+    opacity: 0;
+  }  
+
+  .hjertespillet-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 50px;
+    margin-bottom: 40px;
+    margin-top: 220px;
+    color: white;
+  }  
