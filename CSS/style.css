@@ -72,56 +72,79 @@ body, html {
   
   .floating-circle {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 183px;
+    height: 200px; /* Image + label */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%) scale(0.5); /* Adjusted to visually center */
+    transition: all 1.5s ease-out;
+    opacity: 0;
+    animation: none;
+    text-decoration: none;
+    pointer-events: auto;
+  }
+  
+  .floating-circle img {
     width: 183px;
     height: 183px;
     border-radius: 50%;
-    opacity: 0;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
-    transition: all 1.5s ease-out;
-    animation: none;
     border: 5px #164B9C solid;
+    object-fit: cover;
   }
   
-  /* Target state: when 'active' class is applied */
+  .circle-label {
+    margin-top: 4px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  /* Active state (scales up and fades in) */
   #circles-container.active .floating-circle {
     opacity: 1;
-    transform: scale(1);
+    transform: translate(-50%, -55%) scale(1);
   }
   
-  /* Final target positions + animation (based on nth-child) */
+  /* Floating animation for each */
   #circles-container.active .floating-circle:nth-child(1) {
-    left: 10%;
-    top: 15%;
+    left: 18%;
+    top: 30%;
     animation: floatAround 8s infinite ease-in-out;
   }
   
   #circles-container.active .floating-circle:nth-child(2) {
-    left: 12%;
-    top: 65%;
+    left: 19%;
+    top: 73%;
     animation: floatAround 8s infinite ease-in-out 1s;
   }
   
   #circles-container.active .floating-circle:nth-child(3) {
-    left: 72%;
-    top: 10%;
+    left: 81%;
+    top: 31%;
     animation: floatAround 8s infinite ease-in-out 2s;
   }
   
   #circles-container.active .floating-circle:nth-child(4) {
-    left: 75%;
-    top: 65%;
+    left: 82%;
+    top: 78%;
     animation: floatAround 8s infinite ease-in-out 3s;
   }
   
+  /* Floating keyframes */
   @keyframes floatAround {
-    0% { transform: translate(0px, 0px); }
-    25% { transform: translate(10px, -15px); }
-    50% { transform: translate(-10px, 10px); }
-    75% { transform: translate(15px, -10px); }
-    100% { transform: translate(0px, 0px); }
+    0%   { transform: translate(-50%, -55%) scale(1) translate(0px, 0px); }
+    25%  { transform: translate(-50%, -55%) scale(1) translate(10px, -15px); }
+    50%  { transform: translate(-50%, -55%) scale(1) translate(-10px, 10px); }
+    75%  { transform: translate(-50%, -55%) scale(1) translate(15px, -10px); }
+    100% { transform: translate(-50%, -55%) scale(1) translate(0px, 0px); }
   }
+  
   
   #heart-image {
     position: absolute;
@@ -372,5 +395,22 @@ body, html {
     height: 85px;
     object-fit: cover;
   }
-  
+
+  .quiz-button {
+    background-color: #db1010;
+    border: none;
+    height: 105px;
+    width: 564;
+    padding: 8px 70px;
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  #quiz {
+    margin-top: 140px;
+  }
   
