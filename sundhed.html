@@ -9,13 +9,31 @@
 </head>
 <body>
 <!-- Startskærm -->
-<div class="match-container">
+<div id="start-screen" class="match-container">
     <h1 id="hjertespillet-title">HJERTESPILLET</h1>
     <p class="hjertespillet-subtitle">Svar på dilemmaer og få det sundeste hjerte muligt. <br>
     Alle svar påvirker dit hjertes sundhed.</p>
     <button id="start-btn">START SPILLET</button>
+</div>
 <!-- Spilskærm -->
-
+<div id="game-screen" style="display: none;" class="match-container">
+  <h1 id="game-title" class="game-title">HJERTESPILLET</h1>
+  <div class="left">
+    <h2 id="role"></h2>
+    <p id="question"></p>
+    <button class="choice-btn"></button>
+    <button class="choice-btn"></button>
+    <button class="choice-btn" style="display: none;"></button>
+  </div>
+  <div class="right">
+    <div class="heart-wrapper">
+      <img src="Images/heart.png" alt="Hjerte" class="heart-img" />
+    </div>
+    <div class="health-bar-container">
+      <div id="health-bar" class="health-bar"></div>
+    </div>
+    <div id="feedback" class="health-feedback"></div>
+  </div>
 </div>
   <script src="Javascript/sundhed.js"></script>
 </body>
