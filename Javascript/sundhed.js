@@ -154,11 +154,22 @@ feedback.style.opacity = 1;
     } else {
       // Slut
       setTimeout(() => {
-        alert("Spillet er slut! Din hjertesundhed er: " + health + "%");
-      }, 1500);
+        showEndScreen()
+      }, 100);
     }
   });
 });
+
+function showEndScreen() {
+  gameScreen.style.display = 'none';
+
+  const resultScreen = document.getElementById('result-screen');
+  const scoreText = document.getElementById('score-text');
+
+  scoreText.textContent = `Din hjertesundhed er ${health}%`;
+  resultScreen.classList.remove('hidden');
+  resultScreen.style.display = 'flex';
+}
 
 // Start-knap
 startBtn.addEventListener('click', () => {
