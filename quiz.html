@@ -4,16 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hjertets funktioner - quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/quiz.css" />
 </head>
 <body>
+  <div class="top-bar">
+    <h1>HJERTETS FUNKTIONER</h1>
+    <a href="index.html" id="home-button">
+      <img src="images/home.png" alt="Hjem">
+    </a>
+  </div>  
   <div class="quiz-container">
-    <div class="top-bar">
-      <h1>HJERTETS FUNKTIONER</h1>
-      <div class="icon-container">
-      </div>
-    </div>
     <div class="question-section">
       <h2>Spørgsmål 1</h2>
       <p>Hvad er hjertets primære funktion i kroppen?</p>
@@ -25,9 +27,15 @@
       <button class="option">At nedbryde maden i maven</button>
     </div>
   </div>
-  <a href="index.html" id="home-button">
-    <img src="Images/home.png" alt="Hjem" />
-  </a>
+  <div id="result-screen" class="question-section hidden">
+    <h2>Flot klaret!</h2>
+    <div class="result-box">
+      <p id="score-text">Du fik 0% rigtigt</p>
+    </div>
+    <a href="index.html">
+      <button class="option afslut-button">AFSLUT</button>
+    </a>
+  </div>   
   <script src="Javascript/quiz.js"></script>
 </body>
 </html>
