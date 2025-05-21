@@ -6,6 +6,7 @@
   <title>Hjertets Historie</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="Javascript/kulturoghistorie.js" defer></script>
 </head>
 <body>
   <!-- Home button -->
@@ -18,55 +19,70 @@
     <h1>HJERTETS HISTORIE</h1>
     <h3>Klik og vend og lær om hjertet</h3>
 
-    <!-- Heart Grid (31 images) -->
-    <div class="heart-grid">
-   <!-- Row 1 (top of lobes) -->
-<div></div><div></div><img src="images/image1.jpg" class="heart-tile" />
-<img src="images/image2.jpg" class="heart-tile" /><div></div>
-<img src="images/image3.jpg" class="heart-tile" />
-<img src="images/image4.jpg" class="heart-tile" /><div></div><div></div>
+ <!-- Heart Grid (27 images) -->
+   <div class="heart-grid">
 
-<!-- Row 2 -->
-<div></div><img src="images/image5.jpg" class="heart-tile" />
-<img src="images/image6.jpg" class="heart-tile" />
-<img src="images/image7.jpg" class="heart-tile" />
-<img src="images/image8.jpg" class="heart-tile" />
-<img src="images/image9.png" class="heart-tile" />
-<img src="images/image10.jpg" class="heart-tile" />
+      <!-- Row 1 -->
+      <div></div><div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/heart house.png');"></div><div class="back">Der findes faktisk huse, der er designet i hjerteform. Et eksempel er Heart Retreat House, designet af den cubanske arkitekt Veliz Arquitecto i 2021. Dette konceptuelle hus er inspireret af hjertets organiske form og er tænkt som en hyldest til sundhedsarbejdere verden over. Designet integrerer naturlig ventilation og belysning, hvor husets struktur symboliserer blodets kredsløb gennem hjertet. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Ghandi.png');"></div><div class="back">"Det er bedre i bøn at have et hjerte uden ord end ord uden et hjerte." 
+        — Mahatma Gandhi</div></div></div>
+      <div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Jorn.png');"></div><div class="back">"Det er kunstværkets hemmelighed at kunne åbne menneskehjerter."-  
+        Asger Jorn </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/heart islands.png');"></div><div class="back">Vidste du at der findes flere fascinerende hjerteformede øer rundt om i verden? Hvoraf nogle er naturligt formede og andre er resultatet af menneskelig indgriben.  </div></div></div>
+      <div></div><div></div>
 
-<!-- Row 3 -->
-<img src="images/image11.png" class="heart-tile" />
-<div></div>
-<div></div>
-<img src="images/image12.jpg" class="heart-tile" />
-<img src="images/image13.jpg" class="heart-tile" />
-<img src="images/image14.jpg" class="heart-tile" />
-<img src="images/image15.jpg" class="heart-tile" />
-<img src="images/image16.jpg" class="heart-tile" />
-<img src="images/image17.jpg" class="heart-tile" />
-<img src="images/image18.jpg" class="heart-tile" />
-<div></div>
+      <!-- Row 2 -->
+      <div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/mother teresa.png');"></div><div class="back">"Et glædesfyldt hjerte er det uundgåelige resultat af et hjerte, der brænder af kærlighed."— Moder Teresa</div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/diamant.png');"></div><div class="back">Diamanter har i århundreder symboliseret styrke, rigdom og evig kærlighed. Når de formes som hjerter, bliver de ikke bare dyre smykker — men emotionelle symboler med maksimal værdi som fanger noget vi ikke kan holde fast i: følelser, minder, løfter.  </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Andersen.png');"></div><div class="back">For H.C. Andersen var hjertet ofte et billede på det ægte og ærlige i mennesket – og mange af hans figurer kæmper netop med at følge deres hjerte. Han skrev historier med hjertet i centrum — hvor følelser, sårbarhed og drømme taler direkte til både børn og voksne. Han skrev:  
+        "I naturen er man altid ved Guds hjerte."  
+        “Alle sande genier har meget fængelige hjerter” 
+        "Taknemmeligheden er hjertets hukommelse” </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/julehjerte.png');"></div><div class="back">Flettede hjerter er Dansk tradition som blev gjort populær af H.C. Andersen i 1800-tallet. Julehjertet symboliserer kærlighed og omtanke i juletiden. Det flettes ofte af børn og voksne sammen som en del af julehyggen, og inde i hjertet kan man lægge små godter. Hjertet i denne tradition handler om varme, fællesskab og nærvær — selve kernen i den danske hygge. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/briller.png');"></div><div class="back">Hjerteformede solbriller er ikoniske fashion statement, der udstråler selvtillid og legesyge. De blev først populære i 1960'erne, da de blev et symbol på den tids frisindede modkultur. Ikoner som Audrey Hepburn og Marilyn Monroe blev set iført dem. Moderne berømtheder som Taylor Swift, Katy Perry og Lady Gaga har også taget den hjerteformede trend til sig. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/NY.png');"></div><div class="back">Logoet “I ❤️ NY” blev skabt i 1977 og blev hurtigt et af verdens mest genkendelige symboler. Det lille hjerte gør en stor forskel: det fortæller, at steder ikke kun besøges — de elskes. Turisme bliver til tilhørsforhold. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Da Vinci.png');"></div><div class="back">Leonardo da Vinci lavede nogle af de første detaljerede anatomiske tegninger af menneskets hjerte omkring år 1510. Gennem disse studier opdagede han, at hjertet ikke bare er én hul muskel, men et komplekst organ med kamre, ventiler og rytmer. Han kombinerede kunstnerens blik med videnskabens nysgerrighed — og hans tegninger er stadig beundret af læger og forskere i dag. </div></div></div>
 
-<!-- Row 4 -->
-<div></div><div></div>
-<img src="images/image19.jpg" class="heart-tile" />
-<img src="images/image20.jpg" class="heart-tile" />
-<img src="images/image21.jpg" class="heart-tile" />
-<img src="images/image22.jpg" class="heart-tile" />
-<img src="images/image23.jpg" class="heart-tile" /><div></div>
+      <!-- Row 3 -->
+      <div></div><div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/småkager.png');"></div><div class="back">I Danmark bager vi mange hjerteformede småkager som en del af julen eller til særlige anledninger som bryllup, fødselsdag eller Valentinsdag. De laves ofte som: Vaniljesmåkager, Peberkager, Marcipanhjerter og Honninghjerter.</div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/playing cards.png');"></div><div class="back">Hjerter er én af de fire farver i et klassisk kortspil. Det symboliserer kærlighed, relationer og følelser men det kan også være held eller uheld. Hjertet har været med i spil i århundreder og minder os om, hvordan symboler kan blive en del af leg, strategi og skæbne. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Peter Pys.png');"></div><div class="back">"Hvis der nogensinde kommer en dag, hvor vi ikke længere er sammen, så gem mig i dit hjerte. Jeg bliver der for evigt" -Peter Plys </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/hands.png');"></div><div class="back">"Uret tikker, hjertet banker hele verden fra forstanden gør dog noget, løb for livet brug dog tiden, elsk hinanden" - Steffen Brandt </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/emoji.png');"></div><div class="back">Hjerte-emojien er én af verdens mest brugte symboler i digital kommunikation.  
+        Den findes i mange farver og former og bruges til alt fra kærlighed og venskab til sorg og støtte. Den første hjerte-emoji blev skabt i Japan i slutningen af 1990’erne og blev hurtigt global. I dag sender vi milliarder af dem hver dag! </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Bon Jovi.png');"></div><div class="back">Bon Jovis logo – et hjerte gennemstukket af en dolk – kombinerer kærlighed og smerte. Det er et stærkt visuelt brand, der viser, hvordan musik og følelser smelter sammen. Hjertet i logoet gør rockmusik personlig, dramatisk og uforglemmelig. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/prince.png');"></div><div class="back">"Kun med hjertet kan man rigtigt se. Det væsentlige er usynligt for øjet."- Den Lille Price. Antoine de Saint-Exupery </div></div></div>
+      <div></div>
 
-<!-- Row 5 -->
-<div></div><div></div><div></div><div></div>
-<img src="images/image24.jpg" class="heart-tile" />
-<img src="images/image25.jpg" class="heart-tile" />
-<img src="images/image26.jpg" class="heart-tile" /><div></div><div></div>
+      <!-- Row 4 -->
+      <div></div><div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Aristotele.png');"></div><div class="back">"At uddanne sindet uden at uddanne hjertet er slet ingen uddannelse." 
+        — Aristoteles </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Latte.png');"></div><div class="back">Når en barista hælder mælk i kaffen og danner et hjerte, bliver din Latte pludselig til en kærlig gestus. Latte art er et eksempel på, hvordan hjertet bruges til at udtrykke varme, nærvær og kreativitet — selv i noget så simpelt som en kop kaffe. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Eriksen.png');"></div><div class="back">Under EM i 2021 faldt Christian Eriksen pludselig om med hjertestop midt på banen – hele verden så med. Han overlevede takket være hurtig førstehjælp og har i dag en hjertestarter (ICD) indopereret. Nu spiller han fodbold igen på topniveau og viser, at et hjertestop ikke behøver være slutningen. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Katolisk.png');"></div><div class="back">Det Hellige Hjerte er et katolsk symbol, der viser Jesu Kristi hjerte som en kilde til guddommelig kærlighed, medfølelse og lidelse. Det vises ofte omgivet af torne, med flammer og et kors – tegn på både hans smerte og uendelige kærlighed til menneskeheden. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Blixen.png');"></div><div class="back">"Den, der har lært at lytte til sit hjerte, har fundet den rette vej." -Karen Blixen </div></div></div>
+      <div></div>
 
-<!-- Row 6 (bottom point) -->
-<div></div><div></div><div></div><div></div><div></div>
-<img src="images/image27.jpg" class="heart-tile" /><div></div><div></div><div></div>
+      <!-- Row 5 -->
+      <div></div><div></div><div></div><div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Shakespeare.png');"></div><div class="back">William Shakespeare ofte kaldt verdens største forfatter. Han skrev klassiske værker som Romeo og Julie, Hamlet og Macbeth. Han brugte hjertet som et symbol på alt fra dyb kærlighed og loyalitet til svigt og smerte. Hans ord har rørt hjerter i over 400 år – og gør det stadig. "Det glade hjerte lever længst. "  </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Viana.png');"></div><div class="back">Viana-hjertet stammer fra Nordportugal og er oprindeligt et religiøst symbol.  
+        I dag bæres det som smykke med stolthed — som et tegn på kærlighed, styrke og portugisisk kulturarv. Formen er overdådig og detaljerig, som selve hjertets følelser. </div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/Arnold.png');"></div><div class="back">Vidste du, at Arnold har fået en pacemaker og har været igennem flere hjerteoperationer? Han blev født med en medfødt hjertefejl, og viser, at selv de stærkeste kan have hjerteproblemer. Den tidligere bodybuilder, skuespiller og politiker har gennemgået flere hjerteoperationer, herunder udskiftning af en hjerteklap i 1997 og igen i 2018. I 2024 fik han indsat en pacemaker på grund af en medfødt hjertefejl kaldet bikuspid aortaklap.  </div></div></div>
+      <div></div><div></div>
 
+      <!-- Row 6 -->
+      <div></div><div></div><div></div><div></div><div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="front" style="background-image: url('images/citat.png');"></div><div class="back">"Hvis du vil vide, hvor dit hjerte er, så se, hvor dine tanker vandrer hen, når du dagdrømmer." -Ukendt </div></div></div>
+      <div></div><div></div><div></div>
     </div>
   </div>
+  <script src="Javascript/kulturoghistorie.js"></script>
 </body>
 </html>
 
