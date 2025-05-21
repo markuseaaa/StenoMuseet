@@ -12,7 +12,7 @@ let currentDraggedEl = null;
 let currentDropEl = null;
 let modalOpen = false;
 
-// Match data
+// Array med sygdomme og behandlinger og deres match modaller
 const matchData = {
   hjertestop: {
     title: 'MATCH!',
@@ -36,7 +36,7 @@ const matchData = {
   }
 };
 
-// Setup drag events
+// Trække og droppe funktionalitet
 draggableItems.forEach(drag => {
   drag.addEventListener('dragstart', (e) => {
     currentDraggedEl = drag;
@@ -63,13 +63,13 @@ dropZones.forEach(drop => {
       if (data) {
         currentDropEl = drop;
 
-        // Populate modal
+        // Tilføj information til modal
         modalTitle.textContent = data.title;
         modalDescription.textContent = data.description;
         modalGraphic.src = data.graphic;
         modalGraphic.alt = `Infografik: ${draggedId}`;
 
-        // Show overlay and modal with animation
+        // Vis overlay og modal med animationerå
         modalOverlay.classList.remove('hidden');
         matchModal.classList.remove('hidden');
         modalOverlay.classList.add('show');
@@ -84,17 +84,17 @@ dropZones.forEach(drop => {
   });
 });
 
-// Modal click = close + remove match
+// Modal click = luk + fjern match elementer
 modalOverlay.addEventListener('click', () => {
   if (modalOpen) {
-    // Hide modal + overlay
+    // Fjern modal + overlay
     modalOverlay.classList.remove('show');
     modalOverlay.classList.add('hidden');
     matchModal.classList.remove('show');
     matchModal.classList.add('hidden');
     modalOpen = false;
 
-    // Remove matched elements
+    // Fjern match elementer
     if (currentDraggedEl) {
         currentDraggedEl.classList.add('pop-out');
         setTimeout(() => currentDraggedEl.remove(), 400);

@@ -14,7 +14,7 @@
       });
     });
   
-    // Pulse animation
+    // Puls animation
     function randomPulse() {
       const allCards = document.querySelectorAll('.flip-card');
       allCards.forEach(card => card.classList.remove('pulse'));

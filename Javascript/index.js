@@ -5,7 +5,7 @@ const hotspot = document.getElementById('heart-hotspot');
 const circlesContainer = document.getElementById('circles-container');
 const heartImage = document.getElementById('heart-image');
 
-// Disable hotspot until video has started
+// Deaktiver hotspot indtil video er startet
 hotspot.style.pointerEvents = 'none';
 
 let hasStarted = false;
@@ -14,10 +14,10 @@ document.body.addEventListener('click', () => {
   if (hasStarted) return;
 
   video.muted = false;
-  video.play().catch(e => console.warn("Video play error:", e));
+  video.play();
 
   if (audio) {
-    audio.play().catch(e => console.warn("Audio play error:", e));
+    audio.play();
   }
 
   hotspot.style.pointerEvents = 'auto';
