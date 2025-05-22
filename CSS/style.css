@@ -146,7 +146,7 @@ body, html {
   }
   
   #heart-image {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -155,6 +155,7 @@ body, html {
     z-index: 3; 
     pointer-events: none; 
     transition: opacity 0.2s ease;
+    object-fit: cover;
   }
   
   #heart-image.visible {
@@ -195,7 +196,7 @@ body, html {
   .draggables, .droppables {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    gap: 100px;
     margin: 50px 0;
     flex-wrap: wrap;
   }
@@ -216,6 +217,7 @@ body, html {
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+    margin: 20px;
   }
 
   .item.dragging {
